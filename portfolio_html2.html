@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaishali Survase - Data Analyst Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Vaishali Survase</div>
+            <ul class="nav-links">
+                <li><a href="#home" onclick="scrollToSection('home')">Home</a></li>
+                <li><a href="#about" onclick="scrollToSection('about')">About</a></li>
+                <li><a href="#skills" onclick="scrollToSection('skills')">Skills</a></li>
+                <li><a href="#projects" onclick="scrollToSection('projects')">Projects</a></li>
+                <li><a href="#resume" onclick="scrollToSection('resume')">Resume</a></li>
+                <li><a href="#contact" onclick="scrollToSection('contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="greeting">Hello, I'm</div>
+                    <h1>Vaishali Survase</h1>
+                    <h2 class="typing-text">Data Analyst & BI Expert</h2>
+                    <p>Transforming complex datasets into actionable business insights through advanced analytics, machine learning, and compelling data visualizations. Specialized in SQL, Python, Power BI, and statistical modeling to drive data-driven decision making.</p>
+                    <div class="cta-buttons">
+                        <a href="#projects" class="btn btn-primary" onclick="scrollToSection('projects')">View My Work</a>
+                        <a href="#resume" class="btn btn-secondary" onclick="scrollToSection('resume')">Download Resume</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-img" id="profileImg" onclick="document.getElementById('imageInput').click()">
+                        <div class="upload-placeholder">
+                            <div class="upload-icon">📸</div>
+                            <div class="upload-text">Click to upload photo</div>
+                        </div>
+                    </div>
+                    <input type="file" id="imageInput" accept="image/*" style="display: none;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-alt">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem; line-height: 1.8; color: #555;">
+                <p>I'm a passionate Data Analyst with a proven track record of transforming raw data into strategic business insights. With expertise spanning across SQL database management, Python analytics, Power BI dashboard development, and advanced Excel modeling, I bridge the gap between complex data and actionable business intelligence.</p>
+                <br>
+                <p>My analytical approach combines statistical rigor with creative problem-solving, enabling organizations to uncover hidden patterns, predict trends, and make confident data-driven decisions that drive growth and operational excellence.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-card" data-skill="sql" onclick="filterBySkill('sql')">
+                    <div class="skill-icon">🗄️</div>
+                    <h3>SQL & Database Management</h3>
+                    <p>Advanced querying, performance optimization, stored procedures, and database design across MySQL, PostgreSQL, and SQL Server environments</p>
+                </div>
+                <div class="skill-card" data-skill="powerbi" onclick="filterBySkill('powerbi')">
+                    <div class="skill-icon">📊</div>
+                    <h3>Power BI & Data Visualization</h3>
+                    <p>Interactive dashboards, advanced DAX functions, data modeling, and compelling business intelligence reports for executive decision-making</p>
+                </div>
+                <div class="skill-card" data-skill="python" onclick="filterBySkill('python')">
+                    <div class="skill-icon">🐍</div>
+                    <h3>Python Data Analytics</h3>
+                    <p>Pandas, NumPy, Matplotlib, Seaborn for comprehensive data manipulation, statistical analysis, and predictive modeling</p>
+                </div>
+                <div class="skill-card" data-skill="excel" onclick="filterBySkill('excel')">
+                    <div class="skill-icon">📈</div>
+                    <h3>Advanced Excel & Financial Modeling</h3>
+                    <p>Complex formulas, dynamic pivot tables, VBA automation, and sophisticated financial models for business forecasting</p>
+                </div>
+                <div class="skill-card" data-skill="ml" onclick="filterBySkill('ml')">
+                    <div class="skill-icon">🤖</div>
+                    <h3>Machine Learning & AI</h3>
+                    <p>Predictive modeling, classification algorithms, clustering analysis, and ML pipeline development using scikit-learn and TensorFlow</p>
+                </div>
+                <div class="skill-card" data-skill="statistics" onclick="filterBySkill('statistics')">
+                    <div class="skill-icon">📊</div>
+                    <h3>Statistical Analysis & Research</h3>
+                    <p>Hypothesis testing, regression analysis, A/B testing, and statistical inference for evidence-based business strategies</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-alt">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="major">Major Projects</button>
+                <button class="filter-btn" data-filter="sql">SQL</button>
+                <button class="filter-btn" data-filter="powerbi">Power BI</button>
+                <button class="filter-btn" data-filter="python">Python</button>
+                <button class="filter-btn" data-filter="excel">Excel</button>
+                <button class="filter-btn" data-filter="ml">Machine Learning</button>
+                <button class="filter-btn" data-filter="statistics">Statistics</button>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Major Projects -->
+                <div class="project-card" data-categories="major,python,sql,powerbi,ml,statistics">
+                    <div class="project-img">🏢</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Enterprise Customer Analytics & BI Platform</h3>
+                        <div class="project-category">Major Project</div>
+                        <p class="project-desc">Comprehensive end-to-end analytics platform integrating customer segmentation, predictive modeling, and real-time executive dashboards driving strategic business decisions across multiple departments.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">SQL Server</span>
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Statistics</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/vishh63" target="_blank" class="project-link">🔗 View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-categories="major,python,powerbi,sql,statistics">
+                    <div class="project-img">🎯</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Marketing Intelligence & Attribution Platform</h3>
+                        <div class="project-category">Major Project</div>
+                        <p class="project-desc">Multi-channel marketing analytics platform with advanced attribution modeling, campaign performance tracking, and ROI optimization across digital channels.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Statistics</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/vishh63" target="_blank" class="project-link">🔗 View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-categories="major,python,ml,statistics,excel,sql">
+                    <div class="project-img">📈</div>
+                    <div class="project-content">
+                        <h3 class="project-title">AI-Powered Financial Risk Assessment System</h3>
+                        <div class="project-category">Major Project</div>
+                        <p class="project-desc">Advanced machine learning system for credit risk assessment and loan default prediction, incorporating real-time data processing and automated decision-making algorithms.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Statistics</span>
+                            <span class="tech-tag">Excel</span>
+                            <span class="tech-tag">SQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/vishh63" target="_blank" class="project-link">🔗 View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SQL Projects -->
+                <div class="project-card" data-categories="sql">
+                    <div class="project-img">🗄️</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Database Performance Optimization Suite</h3>
+                        <div class="project-category">SQL Project</div>
+                        <p class="project-desc">Comprehensive database optimization project reducing query execution time by 75% through index optimization, query refactoring, and stored procedure implementation.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">SQL Server</span>
+                            <span class="tech-tag">Query Optimization</span>
+                            <span class="tech-tag">Indexing</span>
+                            <span class="tech-tag">Stored Procedures</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/vishh63" target="_blank" class="project-link">🔗 View Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-categories="sql,statistics">
+                    <div class="project-img">📊</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Customer Journey Analytics Engine</h3>
+                        <div class="project-category">SQL Project</div>
+                        <p class="project-desc">Advanced SQL analytics for customer behavior tracking, conversion funnel analysis, and retention metrics using complex window functions and CTEs.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Window Functions</span>
+                            <span class="tech-tag">CTEs</span>
+                            <span class="tech-tag">Data Modeling</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/vishh63" target="_blank" class="project-link">🔗 View Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Power BI Projects -->
+                <div class="project-card" data-categories="powerbi,sql">
+                    <div class="project-img">📈</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Executive KPI Dashboard Suite</h3>
+                        <div class="project-category">Power BI Project</div>
+                        <p class="project-desc">Comprehensive C-level dashboard with real-time KPIs, financial metrics, operational performance, and predictive analytics across all business units.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">Advanced DAX</span>
+                            <span class="tech-tag">Data Modeling</span>
+                            <span class="tech-tag">Real-time Data</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/vishh63" target="_blank" class="project-link">🔗 View Dashboard</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Python Projects -->
+                <div class="project-card" data-categories="python,ml">
+                    <div class="project-img">🐍</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Customer Churn Prediction & Analytics</h3>
+                        <div class="project-category">Python Project</div>
+                        <p class="project-desc">End-to-end churn analysis with feature engineering, predictive modeling, and actionable insights for customer retention strategies and revenue protection.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Predictive Analytics</span>
+                            <span class="tech-tag">Feature Engineering</span>
+                            <span class="tech-tag">Customer Analytics</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/vishh63" target="_blank" class="project-link">🔗 View Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Machine Learning Projects -->
+                <div class="project-card" data-categories="ml,python,statistics">
+                    <div class="project-img">🤖</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Credit Risk Assessment ML Pipeline</h3>
+                        <div class="project-category">Machine Learning Project</div>
+                        <p class="project-desc">End-to-end ML pipeline for credit risk evaluation using ensemble methods, feature selection, and model interpretability for loan approval automation.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">XGBoost</span>
+                            <span class="tech-tag">Model Deployment</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/vishh63" target="_blank" class="project-link">🔗 View Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistics Projects -->
+                <div class="project-card" data-categories="statistics,python">
+                    <div class="project-img">📊</div>
+                    <div class="project-content">
+                        <h3 class="project-title">A/B Testing Framework & Analysis</h3>
+                        <div class="project-category">Statistics Project</div>
+                        <p class="project-desc">Comprehensive A/B testing framework with power analysis, statistical significance testing, and bayesian inference for conversion optimization and user experience.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">A/B Testing</span>
+                            <span class="tech-tag">Statistical Inference</span>
+                            <span class="tech-tag">Bayesian Analysis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/vishh63" target="_blank" class="project-link">🔗 View Analysis</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume-section">
+        <div class="container">
+            <h2 class="section-title">Professional Resume</h2>
+            <div class="resume-content">
+                <p class="resume-description">
+                    Download my comprehensive resume showcasing expertise in data analytics, business intelligence, 
+                    machine learning, and statistical analysis. Includes detailed project portfolio, technical skills, 
+                    and professional achievements that demonstrate measurable business impact.
+                </p>
+                
+                <div class="resume-highlights">
+                    <div class="highlight-item">
+                        <span class="highlight-number">5+</span>
+                        <span class="highlight-text">Years Experience</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-number">25+</span>
+                        <span class="highlight-text">Projects Completed</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-number">10+</span>
+                        <span class="highlight-text">Technical Skills</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-number">100%</span>
+                        <span class="highlight-text">Success Rate</span>
+                    </div>
+                </div>
+
+                <!-- Replace this href with your actual resume link -->
+                <a href="https://drive.google.com/file/d/YOUR_RESUME_FILE_ID/view" target="_blank" class="download-resume" id="resumeLink">
+                    📄 Download Resume PDF
+                </a>
+                <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                    Note: Update the resume link in the script.js file
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Ready to transform your data into actionable insights? Let's discuss how my analytical expertise can drive your business forward. I'm always excited to tackle challenging data problems and deliver meaningful results.
+            </p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:vaishali.survase@gmail.com">vaishali.survase@gmail.com</a></p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <h3>Phone</h3>
+                    <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">💼</div>
+                    <h3>LinkedIn</h3>
+                    <p><a href="https://linkedin.com/in/vaishali-survase" target="_blank">linkedin.com/in/vaishali-survase</a></p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">🔗</div>
+                    <h3>GitHub</h3>
+                    <p><a href="https://github.com/vishh63" target="_blank">github.com/vishh63</a></p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <h3>Location</h3>
+                    <p>Pune, Maharashtra, India</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">💬</div>
+                    <h3>Response Time</h3>
+                    <p>Within 24 hours</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to top button -->
+    <button class="scroll-top" id="scrollTop">↑</button>
+
+    <!-- Load JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
